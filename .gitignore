@@ -164,5 +164,8 @@ cython_debug/
 # custom
 
 *.png
+*.jpg
+*.jpeg
 tesing image/
 ImageMagick/
+*.7z
