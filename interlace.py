@@ -1,15 +1,15 @@
 import os, glob
 from PIL import Image
 
-magick = "..\\magick.exe"
-source = "illya.png"
-offset = 0.003
+magick = "ImageMagick\\magick.exe"  # path to your ImageMagic
+source = "test.png"  # image you want to intelace
+offset = 0.003  # use between 0.001 and 0.003 
 
 with Image.open(source) as img:  # get size of the image
     width, height = img.size
 
-offset = round(width * offset)  # 0.2% interaced distortion
-if offset < 1:
+offset = round(width * offset)  # calculate amount of pixels from percentage of width
+if offset < 1:  # if the result is less than 1 force 1
     offset = 1
 
 for i in range(0, height, 2):  # extract even lines
